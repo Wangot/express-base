@@ -1,0 +1,79 @@
+{
+    "development": {
+        "url": "http://localhost:3000/",
+        "appName": "base-project - Development",
+        "db" : {
+            "username": "base-project",
+            "password": "base-project",
+            "database": "base-project",
+            "host": "127.0.0.1",
+            "dialect": "mysql",
+            "logging": false
+        },
+        "redis": {
+            "host": "localhost",
+            "port": 6379,
+            "secretKey": "secretKey"
+        },
+        "sendgrid":{
+            "user": "base-project",
+            "key": "base-project123",
+            "defaultFromEmail": "noreply@base-project.no",
+            "defaultFromName": "base-project"
+        },
+        "import_settings": {
+            "email_report": "raymande.leano@gmail.com"
+        }
+    },
+    "staging": {
+        "url": "http://staging.base-project.no/",
+        "appName": "base-project - Staging",
+        "db": {
+            "username": "base-project",
+            "password": "base-project",
+            "database": "base-project_staging",
+            "host": "localhost",
+            "dialect": "mysql"
+        },
+        "redis": {
+            "host": "localhost",
+            "port": 6379,
+            "secretKey": "secretKeyStaging"
+        },
+        "sendgrid":{
+            "user": "base-project",
+            "key": "base-project123",
+            "defaultFromEmail": "other@example.com",
+            "defaultFromName": "base-project"
+        },
+        "import_settings": {
+            "email_report": "raymande.leano@gmail.com"
+        }
+    },
+    "production": {
+        "url": "http://base-project.no/",
+        "appName": "base-project",
+        "db": {
+            "username": "base-project",
+            "password": "base-project",
+            "database": "base-project",
+            "host": "localhost",
+            "dialect": "mysql",
+            "logging": false
+        },
+        "redis": {
+            "host": "localhost",
+            "port": 6379,
+            "secretKey": "secretKeyProd"
+        },
+        "sendgrid":{
+            "user": "base-project",
+            "key": "base-project123",
+            "defaultFromEmail": "noreply@base-project.no",
+            "defaultFromName": "base-project"
+        },
+        "import_settings": {
+            "email_report": "raymande.leano@gmail.com"
+        }
+    }
+}

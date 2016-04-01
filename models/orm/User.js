@@ -1,5 +1,4 @@
-var path = require('path');
-// var passwordHelper = require(path.resolve('./models/helpers/password'));
+var passwordHelper = require("accelecore").Password;
 
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
@@ -35,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         classMethods: {
         associate: function(models) {
-                // User.belongsTo(models.Profile),
+                User.belongsTo(models.Profile),
                 User.belongsToMany(models.Role, {through: 'user_roles'})
             }
         },

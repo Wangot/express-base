@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var routes = require('./routes/index');
 
 var app = express();
 
@@ -18,7 +17,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 // NOTE: Make sure that this is always commented
 /*var initData = require(path.resolve("./models/InitialData"));
@@ -31,7 +30,8 @@ initData.rebuildDB().then(function(){
 var accelecore = require("accelecore");
 app.use(accelecore.Express.ejs.layout);
 
-app.use('/', routes);
+// Router
+require(path.resolve("./routes"))(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

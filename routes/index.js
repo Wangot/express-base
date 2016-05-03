@@ -1,11 +1,8 @@
-var express = require('express');
-var router = express.Router();
+module.exports = function(app){
+    // app.use('/api', require('./api'));
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
+    // For testing
+    app.use('/test', require('./test'));
 
-  	res.renderLayout('home', { title: 'Express' });
-});
-
-module.exports = router;
+    app.use('/', require('./default'));
+};

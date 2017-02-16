@@ -7,8 +7,7 @@ var models = require(path.resolve("./models/orm"));
 
 /* GET home page test. */
 router.get('/', function(req, res, next) {
-    // res.render('landing_page', { title: 'Express' });
-    res.end('test')
+    res.renderLayout('test', { title: 'Express' }, 'test');
 });
 
 module.exports = router;
